@@ -1,8 +1,6 @@
 # Docker Images
 
-### How to use this repo imagers
-
-#### Flask-image
+#### How to use this Flask-image
 ```sh
 docker build -t your-image-name .
 ```
