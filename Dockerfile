@@ -2,7 +2,7 @@
 FROM python:latest
 
 # Set labels
-LABEL maintainer="Lahiru De Silva <lahirurashmitha00@gmail.com>" \
+LABEL maintainer="Lahiru De Silva" \
       version="1.0" \
       description="Flask starting application inside a Docker container"
 
