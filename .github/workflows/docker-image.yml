@@ -13,11 +13,18 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Build docker image
+    - name: Build Docker image
       run: |
         cd Flask-image
         docker build -t flask-image .
 
-    - name: Run docker container using image
-      run: |
-        docker run -it --name flask-container -p 5000:5000 flask-image
+    - name: Run Docker container using image
+      run: docker run --name flask-container -p 5000:5000 flask-image
+
+    - name: Test API
+      run: curl http://localhost:5000
+
+    - name: Get flask-container container logs
+      run: docker logs flask-container
+
+
