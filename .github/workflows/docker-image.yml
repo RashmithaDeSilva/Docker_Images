@@ -15,6 +15,7 @@ jobs:
 
       - name: Run Commands
         run: |
+          docker --version
           ls       # List files in the current directory
           pwd      # Print the current working directory
           whoami   # Print the current user
