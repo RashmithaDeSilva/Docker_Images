@@ -9,12 +9,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # services:
-    #   app:
-    #     image: flask-image
-    #     ports:
-    #       - 5000:5000
-    #     options: --name flask-container
+    services:
+      app:
+        image: flask-image
+        ports:
+          - 5000:5000
+        options: --name flask-container
 
     steps:
     - name: Checkout code
@@ -26,21 +26,21 @@ jobs:
     # - name: Login to Docker Hub
     #   run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-    - name: Debug Docker Pull
-      run: |
-        docker version
-        docker info
-        docker pull python:latest
-
-    # - name: Build docker image
+    # - name: Debug Docker Pull
     #   run: |
-    #     cd Flask-image
-    #     docker build -t flask-image .
+    #     docker version
+    #     docker info
+    #     docker pull python:latest
 
-    # - name: Wait for the service to be ready
-    #   run: sleep 30s  # Adjust the duration based on your application's startup time
+    - name: Build docker image
+      run: |
+        cd Flask-image
+        docker build -t flask-image .
 
-    # - name: Test the running container
-    #   run: curl http://localhost:5000
+    - name: Wait for the service to be ready
+      run: sleep 30s  # Adjust the duration based on your application's startup time
+
+    - name: Test the running container
+      run: curl http://localhost:5000
 
 
