@@ -15,3 +15,10 @@ docker run -it --name your-container-name -p 5000:5000 your-image-name
 docker pull rashmithadesilva/flask
 ```
 https://hub.docker.com/r/rashmithadesilva/flask
+
+---
+
+#### How to start flask app
+```py
+pyhton3 app.py
+```
