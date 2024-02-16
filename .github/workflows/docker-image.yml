@@ -14,7 +14,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Update Dockerfile to Define the command to run your application 
-      run: echo "CMD ["python3", "app.py"]" >> Dockerfile
+      run: |
+        echo "CMD [\"python3\", \"app.py\"]" >> Dockerfile
+        cat Dockerfile
 
     - name: Build Docker image
       run: docker build -t flask-image .
